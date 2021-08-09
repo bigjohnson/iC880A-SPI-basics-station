@@ -48,7 +48,8 @@ WantedBy=multi-user.target
 
 5. Go to TTN v3 console.
 6. Create a new gateway checking the Require authenticated connection box.
-7. Create station.conf file:
+![Authenticated connection](https://raw.githubusercontent.com/bigjohnson/iC880A-SPI-basics-station/main/img/authcon.PNG)
+8. Create station.conf file:
 ```
 cd /etc/basicstation 
 ```
