@@ -14,6 +14,7 @@ make platform=rpi variant=std
 ```
 2. Manually install it:
 ```
+sudo su -
 mkdir /opt
 mkdir /opt/basicstation
 mkdir /opt/basicstation/bin
@@ -45,12 +46,92 @@ WantedBy=multi-user.target
 
 5. Go to TTN v3 console.
 6. Create a new gateway checking the Require authenticated connection box.
+7. Create station.conf file:
+```
+cd /etc/basicstation 
+```
+create the file station.conf with this content
+```
+{
+    /* If slave-X.conf present this acts as default settings */
+    "SX1301_conf": {                 /* Actual channel plan is controlled by server */
+        "lorawan_public": true,      /* is default */
+        "clksrc": 1,                 /* radio_1 provides clock to concentrator */
+        /* path to the SPI device, un-comment if not specified on the command line e.g., RADIODEV=/dev/spidev0.0 */
+        "device": "/dev/spidev0.0",
+        /* freq/enable provided by LNS - only HW specific settings listed here */
+        "radio_0": {
+            "type": "SX1257",
+            "rssi_offset": -166.0,
+            "tx_enable": true,
+            "antenna_gain": 0
+        },
+        "radio_1": {
+            "type": "SX1257",
+            "rssi_offset": -166.0,
+            "tx_enable": false
+        }
+        /* chan_multiSF_X, chan_Lora_std, chan_FSK provided by LNS */
+    },
+    "station_conf": {
+        "routerid": "Gateway EUI from TTN v3 console",
+        "log_file":  "/var/log/basicstation.log",
+        /*"log_level": "DEBUG",  /* XDEBUG,DEBUG,VERBOSE,INFO,NOTICE,WARNING,ERROR,CRITICAL */
+        "log_level": "INFO",
+        "log_size":  10000000,
+        "log_rotate":  3,
+        "CUPS_RESYNC_INTV": "1s"
+    }
+}
+```
+get the Gateway EUI parameter from the TTN v3 console's gateway info and put it on the routerid parameter.
 
+The device parameter is correct for new Raspberry Pi cards, if you have a really really old Raspberry Pi you need to change it.
 
 ## Choose which type of config you want LNS or CUPS, with CUPS you can control the gateway config from remote and in future you could do more thing, LNS configure only the router, this is what I understand after fast documentation reading, for best understand read [this link](https://doc.sm.tc/station/tcproto.html).
 
 ## LNS configuration
 
+1. Create the tc.trust file:
+```
+cd /etc/basicstation 
+```
+create the tc.trust with this content:
+```
+-----BEGIN CERTIFICATE-----
+MIIFazCCA1OgAwIBAgIRAIIQz7DSQONZRGPgu2OCiwAwDQYJKoZIhvcNAQELBQAw
+TzELMAkGA1UEBhMCVVMxKTAnBgNVBAoTIEludGVybmV0IFNlY3VyaXR5IFJlc2Vh
+cmNoIEdyb3VwMRUwEwYDVQQDEwxJU1JHIFJvb3QgWDEwHhcNMTUwNjA0MTEwNDM4
+WhcNMzUwNjA0MTEwNDM4WjBPMQswCQYDVQQGEwJVUzEpMCcGA1UEChMgSW50ZXJu
+ZXQgU2VjdXJpdHkgUmVzZWFyY2ggR3JvdXAxFTATBgNVBAMTDElTUkcgUm9vdCBY
+MTCCAiIwDQYJKoZIhvcNAQEBBQADggIPADCCAgoCggIBAK3oJHP0FDfzm54rVygc
+h77ct984kIxuPOZXoHj3dcKi/vVqbvYATyjb3miGbESTtrFj/RQSa78f0uoxmyF+
+0TM8ukj13Xnfs7j/EvEhmkvBioZxaUpmZmyPfjxwv60pIgbz5MDmgK7iS4+3mX6U
+A5/TR5d8mUgjU+g4rk8Kb4Mu0UlXjIB0ttov0DiNewNwIRt18jA8+o+u3dpjq+sW
+T8KOEUt+zwvo/7V3LvSye0rgTBIlDHCNAymg4VMk7BPZ7hm/ELNKjD+Jo2FR3qyH
+B5T0Y3HsLuJvW5iB4YlcNHlsdu87kGJ55tukmi8mxdAQ4Q7e2RCOFvu396j3x+UC
+B5iPNgiV5+I3lg02dZ77DnKxHZu8A/lJBdiB3QW0KtZB6awBdpUKD9jf1b0SHzUv
+KBds0pjBqAlkd25HN7rOrFleaJ1/ctaJxQZBKT5ZPt0m9STJEadao0xAH0ahmbWn
+OlFuhjuefXKnEgV4We0+UXgVCwOPjdAvBbI+e0ocS3MFEvzG6uBQE3xDk3SzynTn
+jh8BCNAw1FtxNrQHusEwMFxIt4I7mKZ9YIqioymCzLq9gwQbooMDQaHWBfEbwrbw
+qHyGO0aoSCqI3Haadr8faqU9GY/rOPNk3sgrDQoo//fb4hVC1CLQJ13hef4Y53CI
+rU7m2Ys6xt0nUW7/vGT1M0NPAgMBAAGjQjBAMA4GA1UdDwEB/wQEAwIBBjAPBgNV
+HRMBAf8EBTADAQH/MB0GA1UdDgQWBBR5tFnme7bl5AFzgAiIyBpY9umbbjANBgkq
+hkiG9w0BAQsFAAOCAgEAVR9YqbyyqFDQDLHYGmkgJykIrGF1XIpu+ILlaS/V9lZL
+ubhzEFnTIZd+50xx+7LSYK05qAvqFyFWhfFQDlnrzuBZ6brJFe+GnY+EgPbk6ZGQ
+3BebYhtF8GaV0nxvwuo77x/Py9auJ/GpsMiu/X1+mvoiBOv/2X/qkSsisRcOj/KK
+NFtY2PwByVS5uCbMiogziUwthDyC3+6WVwW6LLv3xLfHTjuCvjHIInNzktHCgKQ5
+ORAzI4JMPJ+GslWYHb4phowim57iaztXOoJwTdwJx4nLCgdNbOhdjsnvzqvHu7Ur
+TkXWStAmzOVyyghqpZXjFaH3pO3JLF+l+/+sKAIuvtd7u+Nxe5AW0wdeRlN8NwdC
+jNPElpzVmbUq4JUagEiuTDkHzsxHpFKVK7q4+63SM1N95R1NbdWhscdCb+ZAJzVc
+oyi3B43njTOQ5yOf+1CceWxG1bQVs5ZufpsMljq4Ui0/1lvh+wjChP4kqKOJ2qxq
+4RgqsahDYVvTH9w7jXbyLeiNdd8XM2w9U/t7y0Ff/9yi0GE44Za4rF2LN9d11TPA
+mRGunUHBcnWEvgJBQl9nJEiU0Zsnvgc/ubhPgXRR4Xq37Z0j4r7g1SgEEzwxA57d
+emyPxgcYxn/eR44/KJ4EBs+lVDR3veyJm+kXQ99b21/+jh5Xos1AnX5iItreGCc=
+-----END CERTIFICATE-----
+```
+
+this is the public certificate of the SSL TTN servers
 
 1. Go on gateway API kwìeys and add a new key, call it LNS and check the
 
