@@ -310,3 +310,5 @@ the comand should show something like this:
    CGroup: /system.slice/basicstation.service
            └─332 /opt/basicstation/bin/station -h /etc/basicstation
 ```
+In the TTN v3 console gateway live data you should view two lines like these:
+![Gateway cooonected](https://raw.githubusercontent.com/bigjohnson/iC880A-SPI-basics-station/main/img/connect.PNG)
