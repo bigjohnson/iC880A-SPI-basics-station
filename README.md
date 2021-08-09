@@ -140,8 +140,11 @@ create the tc.uri with this content:
 ```
 wss://eu1.cloud.thethings.network:8887
 ```
-this is the TTN v3 secure websocket server, THIS SERVER IS FOR THE EUROPEAN USERS. IF YOU ARE NOT AN EUROPEAN USER USE THE SERVER IN Gateway Server address ON YOUR TTN v3 INFO PAGE.
-1. Go on gateway API kwìeys and add a new key, call it LNS and check the
+this is the TTN v3 secure websocket server.
+
+THIS SERVER IS FOR THE EUROPEAN USERS. IF YOU ARE NOT AN EUROPEAN USER USE THE SERVER IN Gateway Server address ON YOUR TTN v3 INFO PAGE.
+
+3. Go on gateway API keys and add a new key, call it LNS and check the
 
 Grant individual rights box
 
@@ -151,5 +154,14 @@ Save changes
 
 write down the key in a text file and save it for next usage, YOU CANNOT SEE THE KEY AFTER!!! If you loose it you must delete ad recreate it!!!
 
-2. Return to the raspberry terminal.
-3. 
+4. Create the tc.key file:
+```
+cd /etc/basicstation 
+```
+create the tc.key with this content:
+```
+Authorization: NNSXS.Your key from previus point
+```
+THE FILE MUST HAVE A DOS FORMATTED END OF LINE, IF THE FILE DON'T HAS IT THE BASIC STATION SERVER GIVE THE INFAMOUS INCORRECT END OF LINE ERROR!!!!!!!
+
+Go to enable the server section.
