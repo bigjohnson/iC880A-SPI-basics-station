@@ -88,7 +88,7 @@ get the Gateway EUI parameter from the TTN v3 console's gateway info and put it 
 
 The device parameter is correct for new Raspberry Pi cards, if you have a really really old Raspberry Pi you need to change it.
 
-## Choose which type of config you want LNS or CUPS, with CUPS you can control the gateway config from remote and in future you could do more thing, LNS configure only the router, this is what I understand after fast documentation reading, for best understand read [this link](https://doc.sm.tc/station/tcproto.html).
+## Choose which type of config you want LNS or CUPS, with CUPS you can control the gateway from remote and in future you could do more thing, LNS configure only the frequencies, this is what I understand after fast documentation reading, for best understand read [this link](https://doc.sm.tc/station/tcproto.html).
 
 ## LNS configuration
 
@@ -258,3 +258,24 @@ LoRa Basic Station LNS Authentication Key box
 
 Save changes
 
+## Enable the server
+
+### Stop the Semtech UDP packet forwarder if you have install it:
+1. Stop the ttn-gateway.service
+```
+systemctl stop ttn-gateway.service
+```
+2. Disable the ttn-gateway.service
+```
+systemctl disable ttn-gateway.service
+```
+3. Check the ttn-gateway.service status
+```
+systemctl status ttn-gateway.service
+```
+the comand should show this:
+```
+● ttn-gateway.service - The Things Network Gateway
+   Loaded: loaded (/lib/systemd/system/ttn-gateway.service; disabled)
+   Active: inactive (dead)
+```
