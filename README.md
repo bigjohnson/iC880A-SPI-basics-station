@@ -233,6 +233,8 @@ retrieve secrets associated with a gateway box
 
 edit basic gateway settings box
 
+![CUPS key](https://raw.githubusercontent.com/bigjohnson/iC880A-SPI-basics-station/main/img/cups.PNG)
+
 Save changes
 
 write down the key in a text file and save it for next usage, YOU CANNOT SEE THE KEY AFTER!!! If you loose it you must delete ad recreate it!!!
@@ -252,6 +254,8 @@ THE FILE MUST HAVE A DOS FORMATTED END OF LINE, IF THE FILE DON'T HAS IT THE BAS
 Grant individual rights box
 
 link as Gateway to a Gateway Server for traffic exchange, i.e. write uplink and read downlink box
+
+![LNS key](https://raw.githubusercontent.com/bigjohnson/iC880A-SPI-basics-station/main/img/lns.PNG)
 
 Save changes
 
