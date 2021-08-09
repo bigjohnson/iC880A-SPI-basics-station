@@ -261,7 +261,7 @@ Save changes
 
 write down the key in a text file and save it for next usage, YOU CANNOT SEE THE KEY AFTER!!! If you loose it you must delete ad recreate it!!!
 
-5. Go on the TTN v3 console on your new gateway general settings and paste the key created at previus poit on the
+5. Go on the TTN v3 console on your new gateway general settings and paste the key created at previus ponit on the
 
 LoRa Basic Station LNS Authentication Key box
 
