@@ -14,12 +14,12 @@ How install Semtech Basic Station LoRA packet forwarder on a Raspberry Pi with a
 `make platform=rpi variant=std`
 
 2. Manually install it:
-
-```mkdir /opt
+```
+mkdir /opt
 mkdir /opt/basicstation
 mkdir /opt/basicstation/bin
-cp build-rpi-std/bin/station /opt/basicstation/bin```
-
+cp build-rpi-std/bin/station /opt/basicstation/bin
+```
 3. Create config directory:
 
 `mkdir /etc/basicstation`
