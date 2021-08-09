@@ -144,7 +144,7 @@ this is the TTN v3 secure websocket server.
 
 THIS SERVER IS FOR THE EUROPEAN USERS. IF YOU ARE NOT AN EUROPEAN USER USE THE SERVER IN Gateway Server address ON YOUR TTN v3 INFO PAGE.
 
-3. Go on gateway API keys and add a new key, call it LNS and check the
+3. Go on the TTN v3 console on your new gateway API keys section and add a new key, call it LNS and check the
 
 Grant individual rights box
 
@@ -218,7 +218,7 @@ https://eu1.cloud.thethings.network:443
 ```
 this is the TTN v3 secure web server.
 
-3. Go on gateway API keys and add a new key, call it CUPS and check the
+3. Go on the TTN v3 console on your new gateway API keys section and add a new key, call it CUPS and check the
 
 Grant individual rights box
 
@@ -231,4 +231,30 @@ edit basic gateway settings box
 Save changes
 
 write down the key in a text file and save it for next usage, YOU CANNOT SEE THE KEY AFTER!!! If you loose it you must delete ad recreate it!!!
+
+4. Create the cups-boot.key file:
+```
+cd /etc/basicstation 
+```
+create the cups-boot.key with this content:
+```
+Authorization: Bearer NNSXS.Your key from previus point
+```
+THE FILE MUST HAVE A DOS FORMATTED END OF LINE, IF THE FILE DON'T HAS IT THE BASIC STATION SERVER GIVE THE INFAMOUS INCORRECT END OF LINE ERROR!!!!!!!
+
+4. Go on the TTN v3 console on your new gateway API keys section and add a new key, call it LNS and check the
+
+Grant individual rights box
+
+link as Gateway to a Gateway Server for traffic exchange, i.e. write uplink and read downlink box
+
+Save changes
+
+write down the key in a text file and save it for next usage, YOU CANNOT SEE THE KEY AFTER!!! If you loose it you must delete ad recreate it!!!
+
+5. Go on the TTN v3 console on your new gateway general settings and paste the key created at previus poit on the
+
+LoRa Basic Station LNS Authentication Key box
+
+Save changes
 
