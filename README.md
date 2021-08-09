@@ -260,6 +260,10 @@ LoRa Basic Station LNS Authentication Key box
 
 Save changes
 
+# If you have both LNS and CUPS files in the config directory the LNS files has the precedence, I think...
+
+# see the program help, and if you want be shure don't mix config files.
+
 ## Enable the server
 
 ### Stop the Semtech UDP packet forwarder if you have install it:
