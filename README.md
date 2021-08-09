@@ -281,3 +281,26 @@ the comand should show this:
 ```
 in this way we disable the old packet forwarder but don't uninstall it, if you have some problem with the Basic Tation you could quickly reenable the old.
 
+### Start the Semtech Basic Station:
+
+1. Enable the basicstation.service
+```
+systemctl enable basicstation.service
+```
+2. Stop the basicstation.service
+```
+systemctl start basicstation.service
+```
+3. Check the ttn-gateway.service status
+```
+systemctl status basicstation.service
+```
+the comand should show something like this:
+```
+● basicstation.service - Basic Sation TTN V3 service
+   Loaded: loaded (/lib/systemd/system/basicstation.service; enabled)
+   Active: active (running) since gio 2021-07-22 05:17:08 CEST; 2 weeks 4 days ago
+ Main PID: 332 (station)
+   CGroup: /system.slice/basicstation.service
+           └─332 /opt/basicstation/bin/station -h /etc/basicstation
+```
