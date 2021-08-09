@@ -18,3 +18,31 @@ How install Semtech Basic Station LoRA packet forwarder on a Raspberry Pi with a
 `mkdir /opt` if you don't have it on your filesystem
 
 `mkdir /opt/basicstation`
+
+`mkdir /opt/basicstation/bin`
+
+`cp build-rpi-std/bin/station /opt/basicstation/bin`
+
+3. Create config directory:
+
+`mkdir /etc/basicstation`
+
+4. Create the service file:
+
+/lib/systemd/system/basicstation.service
+
+with this content
+
+[Unit]
+Description=Basic Sation TTN V3 service
+
+[Service]
+WorkingDirectory=/opt/basicstation/bin
+ExecStart=/opt/basicstation/bin/station -h /etc/basicstation
+SyslogIdentifier=ttn-gateway
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
+
