@@ -4,9 +4,9 @@ How install Semtech Basic Station LoRA packet forwarder on a Raspberry Pi with a
 ## I wrote this doc for upgrading a working installation on a Raspberry Pi of a Semtech udp packet forwarder to the new Basic Station protocol. If you need to install the hardware go to [the best howto](https://github.com/ttn-zh/ic880a-gateway/wiki) and complete hardware install, stop before software install, and back here.
 
 1. Get the source code:
-
-`git clone https://github.com/lorabasics/basicstation.git`
-
+```
+git clone https://github.com/lorabasics/basicstation.git
+```
 2. Compile it:
 ```
 cd basicstation
@@ -20,15 +20,15 @@ mkdir /opt/basicstation/bin
 cp build-rpi-std/bin/station /opt/basicstation/bin
 ```
 3. Create config directory:
-
-`mkdir /etc/basicstation`
-
+```
+mkdir /etc/basicstation
+```
 4. Create the service file:
-
+```
 /lib/systemd/system/basicstation.service
-
+```
 with this content
-
+```
 [Unit]
 Description=Basic Sation TTN V3 service
 
@@ -41,4 +41,4 @@ RestartSec=5
 
 [Install]
 WantedBy=multi-user.target
-
+```
