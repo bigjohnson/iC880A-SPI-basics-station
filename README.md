@@ -9,7 +9,7 @@ How install Semtech Basic Station LoRA packet forwarder on a Raspberry Pi with a
 
 2. Compile it:
 ```
-cd basicstation`
+cd basicstation
 make platform=rpi variant=std
 ```
 2. Manually install it:
