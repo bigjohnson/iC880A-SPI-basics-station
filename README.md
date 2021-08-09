@@ -42,3 +42,9 @@ RestartSec=5
 [Install]
 WantedBy=multi-user.target
 ```
+
+## Choose which type of config you want LNS or CUPS, WITH CUPS you can control the gateway config from remote and in future you could do more thing, LNS configure only the router, this is my opinion, for best understand read [this link](https://doc.sm.tc/station/tcproto.html).
+
+## LNS configuration
+
+pippo
