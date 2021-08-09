@@ -74,7 +74,7 @@ create the file station.conf with this content
         /* chan_multiSF_X, chan_Lora_std, chan_FSK provided by LNS */
     },
     "station_conf": {
-        "routerid": "Gateway EUI from TTN v3 console",
+        "routerid": "-x-x-x Gateway EUI from TTN v3 console x-x-x-",
         "log_file":  "/var/log/basicstation.log",
         /*"log_level": "DEBUG",  /* XDEBUG,DEBUG,VERBOSE,INFO,NOTICE,WARNING,ERROR,CRITICAL */
         "log_level": "INFO",
@@ -130,9 +130,17 @@ mRGunUHBcnWEvgJBQl9nJEiU0Zsnvgc/ubhPgXRR4Xq37Z0j4r7g1SgEEzwxA57d
 emyPxgcYxn/eR44/KJ4EBs+lVDR3veyJm+kXQ99b21/+jh5Xos1AnX5iItreGCc=
 -----END CERTIFICATE-----
 ```
-
 this is the public certificate of the SSL TTN servers
 
+2. Create the tc.uri file:
+```
+cd /etc/basicstation 
+```
+create the tc.uri with this content:
+```
+wss://eu1.cloud.thethings.network:8887
+```
+this is the TTN v3 secure websocket server, THIS SERVER IS FOR THE EUROPEAN USERS. IF YOU ARE NOT AN EUROPEAN USER USE THE SERVER IN Gateway Server address ON YOUR TTN v3 INFO PAGE.
 1. Go on gateway API kwìeys and add a new key, call it LNS and check the
 
 Grant individual rights box
