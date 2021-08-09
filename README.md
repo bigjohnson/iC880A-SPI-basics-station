@@ -153,6 +153,8 @@ Grant individual rights box
 
 link as Gateway to a Gateway Server for traffic exchange, i.e. write uplink and read downlink box
 
+![LNS key](https://raw.githubusercontent.com/bigjohnson/iC880A-SPI-basics-station/main/img/lns.PNG)
+
 Save changes
 
 write down the key in a text file and save it for next usage, YOU CANNOT SEE THE KEY AFTER!!! If you loose it you must delete ad recreate it!!!
