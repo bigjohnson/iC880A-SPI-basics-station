@@ -279,3 +279,5 @@ the comand should show this:
    Loaded: loaded (/lib/systemd/system/ttn-gateway.service; disabled)
    Active: inactive (dead)
 ```
+in this way we disable the old packet forwarder but don't uninstall it, if you have some problem with the Basic Tation you could quickly reenable the old.
+
