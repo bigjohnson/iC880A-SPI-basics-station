@@ -265,6 +265,8 @@ write down the key in a text file and save it for next usage, YOU CANNOT SEE THE
 
 LoRa Basic Station LNS Authentication Key box
 
+![LNS key auth](https://raw.githubusercontent.com/bigjohnson/iC880A-SPI-basics-station/main/img/lnsauth.PNG)
+
 Save changes
 
 # If you have both LNS and CUPS files in the config directory the LNS files has the precedence, I think...
