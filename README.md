@@ -43,8 +43,19 @@ RestartSec=5
 WantedBy=multi-user.target
 ```
 
-## Choose which type of config you want LNS or CUPS, WITH CUPS you can control the gateway config from remote and in future you could do more thing, LNS configure only the router, this is my opinion, for best understand read [this link](https://doc.sm.tc/station/tcproto.html).
+## Choose which type of config you want LNS or CUPS, with CUPS you can control the gateway config from remote and in future you could do more thing, LNS configure only the router, this is what I understand after fast documentation reading, for best understand read [this link](https://doc.sm.tc/station/tcproto.html).
 
 ## LNS configuration
 
-pippo
+1. Go to TTN v3 console.
+2. Create a new gateway checking the Require authenticated connection box.
+3. Go on gateway API kwìeys and add a new key, call it LNS and check the
+
+Grant individual rights box
+
+link as Gateway to a Gateway Server for traffic exchange, i.e. write uplink and read downlink box
+
+Save changes
+
+write down the key in a text file and save it for next usage, YOU CANNOT SEE THE KEY AFTER!!! If you loose it you must delete ad recreate it!!!
+
