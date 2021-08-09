@@ -287,11 +287,11 @@ in this way we disable the old packet forwarder but don't uninstall it, if you h
 ```
 systemctl enable basicstation.service
 ```
-2. Stop the basicstation.service
+2. Start the basicstation.service
 ```
 systemctl start basicstation.service
 ```
-3. Check the ttn-gateway.service status
+3. Check the basicstation.service status
 ```
 systemctl status basicstation.service
 ```
