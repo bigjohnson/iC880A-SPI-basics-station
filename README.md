@@ -77,7 +77,7 @@ create the file station.conf with this content
         /* chan_multiSF_X, chan_Lora_std, chan_FSK provided by LNS */
     },
     "station_conf": {
-        "routerid": "-x-x-x Gateway EUI from TTN v3 console x-x-x-",
+        "routerid": "<span style="color:blue">-x-x-x Gateway EUI from TTN v3 console x-x-x-</span>",
         "log_file":  "/var/log/basicstation.log",
         /*"log_level": "DEBUG",  /* XDEBUG,DEBUG,VERBOSE,INFO,NOTICE,WARNING,ERROR,CRITICAL */
         "log_level": "INFO",
