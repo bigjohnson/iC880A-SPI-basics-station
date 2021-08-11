@@ -3,7 +3,7 @@ How install Semtech Basic Station LoRA packet forwarder on a Raspberry Pi with a
 
 ## I wrote this doc for upgrading a working installation on a Raspberry Pi of a Semtech udp packet forwarder to the new Basics Station protocol. If you need to install the hardware go to [the best howto](https://github.com/ttn-zh/ic880a-gateway/wiki) and complete hardware install, stop before software install, and back here.
 
-I tested it on a Raspberry Model B Rev 2 with debian jessie 8.0 but it should work on all types, rember that with very old Raspberry Pi you must change the spi address.
+I tested it on a Raspberry Model B Rev 2 with debian jessie 8.0 but it should work on all types, remember that with very old Raspberry Pi you must change the spi address.
 
 1. Get the source code:
 ```
