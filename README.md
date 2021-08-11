@@ -147,6 +147,8 @@ this is the TTN v3 secure websocket server.
 
 THIS SERVER IS FOR THE EUROPEAN USERS. IF YOU ARE NOT AN EUROPEAN USER USE THE SERVER IN Gateway Server address ON YOUR TTN v3 INFO PAGE.
 
+![Gateway address](https://raw.githubusercontent.com/bigjohnson/iC880A-SPI-basics-station/main/img/gateway.PNG)
+
 3. Go on the TTN v3 console on your new gateway API keys section and add a new key, call it LNS and check the
 
 Grant individual rights box
@@ -222,6 +224,10 @@ create the file cups-boot.uri with this content:
 https://eu1.cloud.thethings.network:443
 ```
 this is the TTN v3 secure web server.
+
+THIS SERVER IS FOR THE EUROPEAN USERS. IF YOU ARE NOT AN EUROPEAN USER USE THE SERVER IN Gateway Server address ON YOUR TTN v3 INFO PAGE.
+
+![Gateway address](https://raw.githubusercontent.com/bigjohnson/iC880A-SPI-basics-station/main/img/gateway.PNG)
 
 3. Go on the TTN v3 console on your new gateway API keys section and add a new key, call it CUPS and check the
 
