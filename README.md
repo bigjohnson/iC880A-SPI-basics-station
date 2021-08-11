@@ -89,6 +89,8 @@ create the file station.conf with this content
 ```
 get the Gateway EUI parameter from the TTN v3 console's gateway info and put it on the routerid parameter.
 
+![Gateway EUI](https://raw.githubusercontent.com/bigjohnson/iC880A-SPI-basics-station/main/img/eui.PNG)
+
 The device parameter is correct for new Raspberry Pi cards, if you have a really really old Raspberry Pi you need to change it.
 
 ## Choose which type of config you want LNS or CUPS, with CUPS you can control the gateway from remote and in future you could do more thing, LNS configure only the frequencies, this is what I understand after fast documentation reading, for best understand read [this link](https://doc.sm.tc/station/tcproto.html).
