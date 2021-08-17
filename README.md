@@ -329,3 +329,7 @@ the comand should show something like this:
 ```
 In the TTN v3 console gateway live data you should view two lines like these:
 ![Gateway cooonected](https://raw.githubusercontent.com/bigjohnson/iC880A-SPI-basics-station/main/img/connect.PNG)
+
+### Radio Init
+
+I try a simple radio init script but it don't work, and I noted that the Basiscs Station work well without it, and actually I don't use any init script for board reset.
