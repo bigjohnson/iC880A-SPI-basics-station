@@ -95,6 +95,8 @@ The device parameter is correct for new Raspberry Pi cards, if you have a really
 
 ## Choose which type of config you want LNS or CUPS, with CUPS you can control the gateway from remote and in future you could do more thing, LNS configure only the frequencies, this is what I understand after fast documentation reading, for best understand read [this link](https://doc.sm.tc/station/tcproto.html).
 
+You must choose one type of configuration LNS or CUPS, don't mix!
+
 ## LNS configuration
 
 1. Create the tc.trust file:
