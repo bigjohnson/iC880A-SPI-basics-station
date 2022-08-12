@@ -96,7 +96,7 @@ get the Gateway EUI parameter from the TTN v3 console's gateway info and put it 
 
 The device parameter is correct for new Raspberry Pi cards, if you have a really really old Raspberry Pi you need to change it.
 
-create the file /opt/basicstation/bin/reset_gw.sh with this content
+Create the file /opt/basicstation/bin/reset_gw.sh with this content
 
 ```
 # Reset iC880a PIN
@@ -111,7 +111,10 @@ echo "0"   > /sys/class/gpio/gpio$SX1301_RESET_BCM_PIN/value
 sleep 0.1
 echo "$SX1301_RESET_BCM_PIN"  > /sys/class/gpio/unexport
 ```
-
+execute this command to allow /opt/basicstation/bin/reset_gw.sh execution
+```
+chmod +x /opt/basicstation/bin/reset_gw.sh
+```
 ## Choose which type of config you want LNS or CUPS, with CUPS you can control the gateway from remote and in future you could do more thing, LNS configure only the frequencies, this is what I understand after fast documentation reading, for best understand read [this link](https://doc.sm.tc/station/tcproto.html).
 
 ## You must choose one type of configuration LNS or CUPS, don't mix!
