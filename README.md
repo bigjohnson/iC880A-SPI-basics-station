@@ -83,7 +83,9 @@ create the file station.conf with this content
         "log_level": "INFO",
         "log_size":  10000000,
         "log_rotate":  3,
-        "CUPS_RESYNC_INTV": "1s"
+        "CUPS_RESYNC_INTV": "1s",
+        "RADIO_INIT_WAIT": "2s",
+        "radio_init": "/opt/basicstation/bin/reset_gw.sh"
     }
 }
 ```
