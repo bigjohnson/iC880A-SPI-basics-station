@@ -95,7 +95,7 @@ get the Gateway EUI parameter from the TTN v3 console's gateway info and put it 
 ![Gateway EUI](https://raw.githubusercontent.com/bigjohnson/iC880A-SPI-basics-station/main/img/eui.PNG)
 
 The device parameter is correct for new Raspberry Pi cards, if you have a really really old Raspberry Pi you need to change it.
-
+### Radio Init
 Create the file /opt/basicstation/bin/reset_gw.sh with this content
 
 ```
@@ -353,7 +353,3 @@ the comand should show something like this:
 ```
 In the TTN v3 console gateway live data you should view two lines like these:
 ![Gateway cooonected](https://raw.githubusercontent.com/bigjohnson/iC880A-SPI-basics-station/main/img/connect.PNG)
-
-### Radio Init
-
-I try a simple radio init script but it don't work, and I noted that the Basiscs Station work well without it, and actually I don't use any init script for board reset.
