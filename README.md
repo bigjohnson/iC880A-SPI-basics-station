@@ -62,6 +62,8 @@ create the file station.conf with this content
         "clksrc": 1,                 /* radio_1 provides clock to concentrator */
         /* path to the SPI device, un-comment if not specified on the command line e.g., RADIODEV=/dev/spidev0.0 */
         "device": "/dev/spidev0.0",
+        /* if you don't have pps from gps */
+        "pps": false,
         /* freq/enable provided by LNS - only HW specific settings listed here */
         "radio_0": {
             "type": "SX1257",
